@@ -2,7 +2,7 @@
 """
 Created on Wed Oct 19 18:04:36 2022
 
-@author: its ya boy
+@author: PalashAcharya
 """
 #to find the area of a triangle 
 

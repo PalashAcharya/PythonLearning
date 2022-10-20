@@ -2,7 +2,7 @@
 """
 Created on Wed Oct 19 18:39:39 2022
 
-@author: its ya boy
+@author: PalashAcharya
 """
 #to find the square root of the number that the user gives
 import math 

@@ -2,7 +2,7 @@
 """
 Created on Wed Oct 19 18:49:32 2022
 
-@author: its ya boy
+@author: PalashAcharya
 """
 #to find the distance between two points
 import math
