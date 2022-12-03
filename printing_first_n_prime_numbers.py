@@ -10,12 +10,3 @@ while(prime_series<=num):
         prime_series = prime_series +1
         print(n)        
     n = n +1
-           
-            
-            
-
-
-
-
-
-        
