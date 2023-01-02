@@ -5,8 +5,8 @@ def Number_Of_Digits(num):
         digits_ = digits_ + 1
     return digits_    
 
-num = Number_Of_Digits(1987)
-print(num)
+# num = Number_Of_Digits(1987)
+# print(num)
 
 def Sum_Of_Digits(num):
     sum = 0
@@ -17,8 +17,8 @@ def Sum_Of_Digits(num):
     return sum
 
 
-num2 = Sum_Of_Digits(785)
-print(num2)
+# num2 = Sum_Of_Digits(785)
+#print(num2)
 
 def Reverse_num(num):
     reverse_num = 0
@@ -28,8 +28,8 @@ def Reverse_num(num):
         reverse_num = reverse_num*10 + last_digit
     return reverse_num
 
-num3 = Reverse_num(785)
-print(num3)
+#num3 = Reverse_num(785)
+#print(num3)
 
 def Is_Palindrome_Num(num):
     reverse_num = Reverse_num(num)
@@ -38,5 +38,5 @@ def Is_Palindrome_Num(num):
     else:
         return False    
 
-num4 = Is_Palindrome_Num(111)
-print(num4)
+#num4 = Is_Palindrome_Num(111)
+#print(num4)
