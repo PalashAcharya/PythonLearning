@@ -16,5 +16,5 @@ def isarmstrong(num):
     else:
         return False
 
-num = isarmstrong(153)
-print(num)
+# num = isarmstrong(153)
+# print(num)
