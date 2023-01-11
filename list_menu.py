@@ -24,6 +24,4 @@ while(condition_!=False):
                 if(i==length_ and search_name!=list_[i-1]):
                     print("Name is not present")
     else:
-        condition_= False
-
-    
+        condition_= False    
