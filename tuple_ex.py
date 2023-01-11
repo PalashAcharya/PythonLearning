@@ -8,4 +8,4 @@ if("hello1" in a):
 else:
     print("it is not")    
 
-print(a.index(34))       
+print(a.index())       
