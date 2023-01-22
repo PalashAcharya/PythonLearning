@@ -1,0 +1,6 @@
+f = open("myfirstfile.txt", "r+")
+input_str = input("Enter text:")
+f.write(input_str)
+input_str = f.read()
+print(input_str)
+f.close()
