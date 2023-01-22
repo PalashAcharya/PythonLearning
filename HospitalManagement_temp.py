@@ -13,4 +13,4 @@ while(condition_ == False):
         Name_input = input("Enter Full Name of the Patient:")
         patient_list.append(Name_input)
     else:
-        condition_= False
+        condition_= True
