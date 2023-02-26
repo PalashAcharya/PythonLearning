@@ -8,8 +8,8 @@ a.insert(1,40)
 #a.clear()
 #print(a[1:3])
 a.remove(30)
-#for i in a 
-    #print(i)
+for i in a: 
+    print(i)
 
 
 a.extend([124,48])
