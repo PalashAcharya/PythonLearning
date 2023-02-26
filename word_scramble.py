@@ -17,10 +17,10 @@ for i in random_num_set:
     string_list[i]= "_"
 newstring_ = ""
 for j in string_list:
-    newstring_ = newstring_ + j
+    newstring_ = newstring_ +"  "+ j
 print(newstring_)
 for z in range(0,length_+1):
-    print(z,end =",")
+    print(z,end =" ")
 condition2 = False
 while(condition2==False):
     user_string = ""
