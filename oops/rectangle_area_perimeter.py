@@ -12,4 +12,3 @@ Area = Area_Of_Rectangle(length_,breadth_)
 perimeter = Perimeter_of_rectangle(length_,breadth_)
 print("Area is :",Area )
 print("Perimeter is:",perimeter)
-

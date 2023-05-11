@@ -5,6 +5,7 @@ length_ = len(string_)
 n = length_//2
 random_num_set = set()
 while(condition_== False):
+    print("hi")
     for k in range(0,n+1):
         random_num = random.randint(0,length_-1)
         random_num_set.add(random_num)  
@@ -23,6 +24,7 @@ for z in range(0,length_+1):
     print(z,end =" ")
 condition2 = False
 while(condition2==False):
+    print("hello")
     user_string = ""
     for x in random_num_set:
         print("\nEnter",x,"th Letter:")
