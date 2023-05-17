@@ -23,9 +23,10 @@ struct Node* CreateLinkedlist(struct Node *head){
 	
 }
 void menu(){
-	printf("Enter 1 to add number.\nEnter 2 to view list\nEnter 3 to edit\nEnter 4 to delete a node\nEnter 5 to append at certain position\nEnter 6 to exit\n");
+	printf("Enter 1 to add number.\nEnter 2 to view list\nEnter 3 to edit\nEnter 4 to delete a node\nEnter 5 to append at certain position\nEnter 6 to sort\nEnter 7 to exit\n");
 }
-struct Node* createfirstnode(struct Node *head){
+struct Node* createfirstnode(struct Node*head){
+	head = (struct Node*)malloc(sizeof(struct Node));
 	printf("Enter value of node:");
 	scanf("%d",&head->data);
 	head->next = NULL;
@@ -33,7 +34,7 @@ struct Node* createfirstnode(struct Node *head){
 }
 void EditNode(struct Node *ptr){
 	int user_input,counter;
-	printf("Enter position to delete a node:");
+	printf("Enter position to edit a node:");
 	scanf("%d",&user_input);
 	counter = 1;
 	while(counter!=user_input){
@@ -91,24 +92,45 @@ struct Node* AppendfirstNode(struct Node*ptr){
 	ptr = current;
 	return ptr;
 }
-
+void sortNode(struct Node*head,int count){
+	struct Node *ptr2;
+	struct Node*ptr3;
+	int i,j,var;
+	ptr2=head;
+	ptr3=head->next;
+	for(i=0;i<count;i++){
+		for(j=i+1;j<count;j++){
+			if(ptr3->data>ptr2->data){
+			    var = ptr2->data;
+			    ptr2->data=ptr3->data;
+			    ptr3->data=var;
+			}
+			ptr2=ptr2->next;
+			ptr3=ptr3->next;
+			
+		}
+		ptr2=head;
+		ptr3=head->next;
+	}
+	printf("List sorted!\n");
+}
 int main(){
-	struct Node *head;
+	struct Node *head=NULL;
 	struct Node *ptr;
 	int user_input, condition_ = 0,count=0,counter=1;
-	head = (struct Node*)malloc(sizeof(struct Node));
 	while(condition_==0){
 		menu();
 		printf("\nEnter input:");
 		scanf("%d",&user_input);
 		if(user_input==1){
-			if(count ==0){
+			if(head==NULL||count==0){
 				head = createfirstnode(head);
 				ptr = head;
-				count = count + 1;
+				count=count+1;
 			}
 			else{
 				head = CreateLinkedlist(head);
+				count= count+1;
 			}
 		}
 		if(user_input ==2){
@@ -123,9 +145,11 @@ int main(){
 			scanf("%d",&user_input);
 			if(user_input==1){
 				ptr= DeletefirstNode(ptr);
+				count =count-1;
 			}
 			else{
 				DeleteNode(ptr,&user_input);
+				count=count-1;
 			}
 		}
 		if(user_input==5){
@@ -133,17 +157,20 @@ int main(){
 			scanf("%d",&user_input);
 			if(user_input==1){
 				ptr=AppendfirstNode(ptr);
+				count = count+1;
 			}
 			else{
 				AppendatPosition(ptr,&user_input);
+				count = count+1;
 			}
 		    
 		}
 		if(user_input==6){
-			condition_ =1;
+			sortNode(ptr,count);
 		}	
+		if(user_input==7){
+			condition_=1;
+		}
 	}
-	return 0;
-	
-	
+	return 0;	
 }
