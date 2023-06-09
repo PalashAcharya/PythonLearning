@@ -1,30 +1,48 @@
 class Square:
-    def __init__(self,length_=0):
-        self.length_ = length_
-
+    def __init__(self,length=0):
+        self._length = length
+    def setlength(self,num):
+        if(num>=0):
+            self._length = num
+        else:
+            print("Please enter a valid number")
+    def getlength(self):
+        return self._length
     def area(self):
-        return self.length_*self.length_
-
+        return self._length*self._length
     def perimeter(self):
-        return 4*self.length_
+        return 4*self._length
+    def __eq__(self,other):
+        return self._length==other._length
+    length = property(getlength,setlength)
 class Rectangle:
-    def __init__(self,length_=0,breadth_=0):
-        self.length_=length_
-        self.breadth_= breadth_
+    def __init__(self,length=0,breadth=0):
+        self._length=length
+        self._breadth= breadth
+    def setter(self,l,):
+        if(l >=0):
+            self._length=l
+        else:
+            print("Please enter a valid number")
+    def getter(self):
+        return self._length
+    def setbreadth(self,b):
+        if(b>=0):
+            self._breadth = b
+        else:
+            print("Enter a valid number")
+    def getbreadth(self):
+        return self._breadth
     def area(self):
-        return self.length_*self.breadth_
+        return self._length*self._breadth
     def perimeter(self):
-        return 2*(self.length_*self.breadth_)
-
-square1 = Square(4)
-print("The area of square 1 is:",square1.area())
-print("The Perimeter of square 1 is:",square1.perimeter())
-square2= Square(5)
-print("The area of square 2 is:",square2.area())
-print("The perimeter of square 2 is:",square2.perimeter())
-rectangle1 = Rectangle(2,3)
-rectangle2 = Rectangle(5,6)
-print("The area of rectangle 1 is:",rectangle1.area())
-print("The perimeter of rectangle 2 is :",rectangle2.perimeter())
-print("The area of rectangle 2 is:",rectangle2.area())
-print("The perimeter of rectangle 2 is:",rectangle2.perimeter())
+        return 2*(self._length*self._breadth)
+    length = property(getter,setter)
+    breadth = property(getbreadth,setbreadth)
+s1 = Square()
+s1.length = 10
+s2 = Square()
+s2.length = 10
+print(s1==s2)
+print(s1 is s2)
+print(s1.__eq__(s2))
