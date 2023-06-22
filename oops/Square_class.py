@@ -59,6 +59,8 @@ class Rectangle:
         return self._length*self._breadth
     def perimeter(self):
         return 2*(self._length*self._breadth)
+    def __eq__(self,other):
+        return self._length==other._length
     length = property(getter,setter)
     breadth = property(getbreadth,setbreadth)
 s1 = Square()
