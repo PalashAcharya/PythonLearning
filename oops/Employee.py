@@ -1,5 +1,5 @@
 class Employee:
-    def __init__(self,f_name ="",m_name ="",l_name ="",sal = 0,desig="",comm = 0):
+    def __init__(self,f_name="",m_name ="",l_name="",desig="",sal=0,comm=0):
         self._f_name = f_name
         self._m_name = m_name
         self._l_name = l_name
@@ -33,8 +33,7 @@ class Employee:
     def NetSalary(self):
         return self._sal+self._commision
     def __str__(self):
-        #return f'Employee(First_name={self._f_name},Middle_name= {self._m_name},Last_name= {self._l_name},Designation={self._desig},Net_Salary={self.NetSalary()})'
-        return f'Employee("{self._f_name}","{self._m_name}","{self._l_name}",{self._sal},"{self._desig}",{self._commision})'
+        return f'Employee("{self._f_name}","{self._m_name}","{self._l_name}","{self._desig}",{self._sal},{self._commision})'
     First_name = property(Getf_name,Setf_name)
     Last_name = property(Getl_name,Setl_name)
     Middle_name = property(Getm_name,Setm_name)
@@ -52,15 +51,17 @@ class Salesman(Employee):
     def NetSalary(self):
         return self._sal+self._commision+self._allowance*30
     Allowance = property(GetAllowance,SetAllowance)
-obj1 = Employee("Palash","Sanjay","Acharya",10000,"salesman",5000)
-#obj1.First_name = "Palash"
-#obj1.Middle_name = "Sanjay"
-#obj1.Last_name = "Acharya"
-#obj1.Salary = 10000
-#obj1.Commision = 2000
-#obj1.Designation = "salesman"
-#print("Details of Salesman\nName:",obj1.First_name," ",obj1.Middle_name," ",obj1.Last_name,"\nDesignation:",obj1.Designation,"\nNet salary:",obj1.NetSalary())
+obj1 = Employee("Palash","Sanjay","Acharya","salesman",10000,2000)
+obj1.First_name = "Palash"
+obj1.Middle_name = "Sanjay"
+obj1.Last_name = "Acharya"
+obj1.Salary = 10000
+obj1.Commision = 2000
+obj1.Designation = "salesman"
+print("Details of Salesman\nName:",obj1.First_name," ",obj1.Middle_name," ",obj1.Last_name,"\nDesignation:",obj1.Designation,"\nNet salary:",obj1.NetSalary())
 x = str(obj1)
 print(x)
 y = eval(x)
-print(y.First_name)
+print(y)
+print(type(x))
+print(type(y))
