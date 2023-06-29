@@ -38,13 +38,14 @@ async def root():
     students = session.query(Student).all();
     return students
 
-@app.get("/{id}")
-def GetwithId(id:int):
-    student = session.query(Student).filter(Student.ID==id).first();
-    return student
-@app.get("{name}")
-def getbyname(name:str):
+@app.get("/Getbyname/")
+async def getbyname(name:str):
     student = session.query(Student).filter(Student.Name==name).all()
+    return student
+
+@app.get("/{id}")
+async def GetwithId(id:int):
+    student = session.query(Student).filter(Student.ID==id).first();
     return student
 
 @app.get("/home")
