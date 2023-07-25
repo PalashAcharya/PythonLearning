@@ -64,14 +64,19 @@ def Deletestudent(s_id:int):
     return find_student
 
 @app.put("/UpdateStudent/{s_id}",response_model=studentpy)
-def UpdateStudent(s_id: int,student1:studentpy):
+async def UpdateStudent(s_id: int,student1:studentpy):
     find_student = session.query(Student).filter(Student.ID ==s_id).first();
+    find_student.ID = student1.ID
     find_student.Name = student1.Name
     find_student.Area = student1.Area
     find_student.Phone = student1.Phone
     session.commit()
-    session.refresh(student1)
-    s1 = studentpy.from_orm(find_student)
+    session.refresh(find_student)
+    s1 = studentpy
+    s1.ID = find_student.ID
+    s1.Name = find_student.Name
+    s1.Area = find_student.Area
+    s1.Phone = find_student.Phone
     return s1
 
 @app.get("/")
