@@ -52,6 +52,7 @@ async def add_student(student1:studentpy):
     session.add(new_person)
     session.commit()
     session.refresh(new_person)
+    #s2 = studentpy(ID=new_person.ID,Name=new_person.Name,Phone=new_person.Phone,Area=new_person.Area)
     s2 = studentpy.from_orm(new_person)
     return s2
 
@@ -63,7 +64,7 @@ def Deletestudent(s_id:int):
     session.commit()
     return find_student
 
-@app.put("/UpdateStudent/{s_id}",response_model=studentpy)
+@app.put("/UpdateStudent/{s_id}")
 async def UpdateStudent(s_id: int,student1:studentpy):
     find_student = session.query(Student).filter(Student.ID ==s_id).first();
     find_student.ID = student1.ID
@@ -72,12 +73,10 @@ async def UpdateStudent(s_id: int,student1:studentpy):
     find_student.Phone = student1.Phone
     session.commit()
     session.refresh(find_student)
-    s1 = studentpy
-    s1.ID = find_student.ID
-    s1.Name = find_student.Name
-    s1.Area = find_student.Area
-    s1.Phone = find_student.Phone
-    return s1
+    #s1 = studentpy(ID=find_student.ID,Name=find_student.Name,Phone=find_student.Phone,Area=find_student.Area)
+    s1 = studentpy.from_orm(find_student)
+    s2 = s1.json()
+    return s2
 
 @app.get("/")
 async def root():
@@ -87,7 +86,9 @@ async def root():
 @app.get("/Getbyname/{name}")
 async def getbyname(name:str):
     student = session.query(Student).filter(Student.Name==name).all();
-    return student
+    s1 = studentpy.from_orm(student)
+    s2 = s1.json()
+    return s2
 
 @app.get("/{id}")
 async def GetwithId(id:int):
