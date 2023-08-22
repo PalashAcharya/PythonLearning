@@ -35,6 +35,9 @@ def artithmetic_arranger(List,bool):
             result_String = result_String+"    "+adj_result_str
         format_string = Format(tuple_list,length_)+"\n"+result_String
         return format_string
+    else:
+        format_string = Format(tuple_list,length_)
+        return format_string
 
 def Format(element_list,length):
     if(length>0):
@@ -51,4 +54,4 @@ def Format(element_list,length):
         return -1
 
 L1 = ["1234+4231","1234+2421","1234+3321","1123+1234","9999+9999"]
-print(artithmetic_arranger(L1,True))
+print(artithmetic_arranger(L1,False))
