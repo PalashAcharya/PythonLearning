@@ -8,14 +8,14 @@ class Category:
         self.total = self.total + amount
         self.ledger.append({"amount":amount, "description":des})
 
-    def check_balance(self,amount):
+    def check_funds(self,amount):
         if(self.total>amount):
             return True
         else:
             return False
 
     def withdraw(self,amount,des=""):
-        if(self.check_balance(amount)==True):
+        if(self.check_funds(amount)==True):
             self.total = self.total-amount
             self.ledger.append({"amount":-amount,"description":des})
             return True
@@ -26,7 +26,7 @@ class Category:
         return self.total
     
     def transfer(self,amount,cat):
-        if(self.check_balance(amount)==True):
+        if(self.check_funds(amount)==True):
             self.withdraw(amount,f"Transfer to {cat.category}")
             cat.deposit(amount,f"Transfer from {self.category}")
             return True
@@ -47,4 +47,4 @@ obj.deposit(1000,"Initial deposit")
 obj.withdraw(15,"Groceries")
 obj.withdraw(2,"snacks")
 obj.transfer(230,obj2)
-print(obj2)
+print(obj)
