@@ -37,7 +37,10 @@ class Category:
         
     def spending_percentage(self):
         og_amount = self.total + self.withdrawn_amount
-        percent = (self.withdrawn_amount/og_amount)*100
+        try:
+            percent = (self.withdrawn_amount/og_amount)*100
+        except:
+            raise ZeroDivisionError("Category has no money deposit")
         return round(percent/10)*10
 
     def __repr__(self):
@@ -93,5 +96,6 @@ obj.transfer(230,obj2)
 obj.deposit(1000,"second deposit")
 obj.transfer(1000,obj2)
 obj2.transfer(500,obj4)
+print(f"food:\n{obj},\nclothes:\n{obj2},\nmovies:\n{obj3},\ngames:\n{obj4}")
 l1 = [obj2,obj,obj3,obj4]
 print(create_spend_chart(l1))
