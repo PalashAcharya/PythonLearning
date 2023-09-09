@@ -7,10 +7,10 @@ class Category:
 
     def deposit(self,amount,des=""):
         self.total = self.total + amount
-        self.ledger.append({"amount":amount, "description":des})
+        self.ledger.append({"amount":float(amount), "description":des})
 
     def check_funds(self,amount):
-        if(self.total>amount):
+        if(self.total>=amount):
             return True
         else:
             return False
@@ -19,7 +19,7 @@ class Category:
         if(self.check_funds(amount)==True):
             self.withdrawn_amount = amount
             self.total = self.total-amount
-            self.ledger.append({"amount":-amount,"description":des})
+            self.ledger.append({"amount":-float(amount),"description":des})
             return True
         else:
             return False
@@ -33,7 +33,7 @@ class Category:
             cat.deposit(amount,f"Transfer from {self.category}")
             return True
         else:
-            return True
+            return False
         
     def spending_percentage(self):
         og_amount = self.total + self.withdrawn_amount
@@ -45,9 +45,9 @@ class Category:
 
     def __repr__(self):
         title_string = self.category.center(30,"*")
-        ledger_string = str(self.ledger[0]["description"]).ljust(23)+str(self.ledger[0]["amount"]).rjust(7)
+        ledger_string = str(self.ledger[0]["description"]).ljust(23)+str("{:.2f}".format(self.ledger[0]["amount"])).rjust(7)
         for i in range(1,len(self.ledger)):
-            ledger_string = ledger_string+"\n"+str(self.ledger[i]["description"])[0:23].ljust(23)+str(self.ledger[i]["amount"]).rjust(7)
+            ledger_string = ledger_string+"\n"+str(self.ledger[i]["description"])[0:23].ljust(23)+str("{:.2f}".format(self.ledger[i]["amount"])).rjust(7)
         total_string = "Total:"+str(self.total)
         final_string = title_string+"\n"+ledger_string+"\n"+total_string
         return final_string
