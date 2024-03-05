@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+<body>
+    <style>
+        table{
+            width: 30%;
+            height: 100%;
+        }
+        td{
+            text-align: center;
+        }
+        th{
+            text-align: center;
+        }
+        td.display{
+            text-align: left;
+        }
+        tr{
+            height: 75%;
+        }
+    </style>
+    
+    <div style="height: 90%;border-width: 3px;border-color: aqua;border-style: dashed;">
+        <table border="4">
+            <thead>
+                <tr>
+                    <th colspan="4">Calculator</th>
+                </tr>
+            </thead>
+            <tbody height="75%">
+                <tr>
+                    <td colspan="4",class="display">0</td>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>-</td>
+                    <td>*</td>
+                    <td>/</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td rowspan="4">=</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>.</td>
+                    <td>AC</td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
+</body>
+</html>

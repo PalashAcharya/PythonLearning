@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add</title>
+</head>
+<body>
+    <label for="first_num">
+        Number 1
+        <input type="text" id="first_num" placeholder="00">
+    </label><br>
+    <label for="second_num">
+        Number 2
+        <input type="text" id="second_num" placeholder="00">
+    </label><br>
+    <input type="text" id="answer" readonly><br>
+    <input type="button" id="solve" value="Solve" onclick="func()">
+    <input type="button" id="reset" value="Reset" onclick="reset(['first_num','second_num'])">
+    <br>
+    <br>
+    <label for="num1">
+        Number1
+        <input type="number" id="num1" placeholder="00">
+    </label>
+    <br>
+    <br>
+    <label for="num2">
+        Number2
+        <input type="number" id="num2" placeholder="00">
+    </label>
+    <br>
+    <br>
+    <label for="num3">
+        Number3
+        <input type="number" id="num3" placeholder="00">
+    </label>
+    <label>
+        answer
+        <input type="number" id="ans">
+    </label>
+    <fieldset>
+        <label for="choice1">
+            Max
+            <input type="radio" id="choice1" name="choice" value="Max" checked>
+        </label>
+        <label for="choice2">
+            Min
+            <input type="radio" id="choice2" name="choice" value="Min">
+        </label>
+    </fieldset>
+    <label for="eval">
+        <input type="button" id="eval" value="Evaluate" onclick="eval()">
+    </label>
+    <label for="reset">
+        <input type="button" id="reset" value="Reset" onclick="reset(['num1','num2','num3'])">
+    </label>
+    <script src="add.js"></script>
+</body>
+</html>

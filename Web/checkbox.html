@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+</head>
+<body>
+    <div id="checkbox">
+        <fieldset>
+            <legend>What are your selected subjects?</legend>
+            <div>
+            <label for="js">
+                Web
+                <input type="checkbox" id="js" name="subjects" value="Web">
+            </label>
+            <label for="ds">
+                Data Science
+                <input type="checkbox" id="ds" name="subjects" value="Data Science">
+            </label>
+            <label for="db">
+                Database
+                <input type="checkbox" id="db" name="subjects" value="Database">
+            </label>
+        </fieldset>
+        <label for="sub">
+            <input type="button" id="sub" value="Submit" onclick="func2()">
+        </label>
+        <label for="sub2">
+            <input type="button" id="sub2" value="Submit2" onclick="func3()">
+        </label><br>
+        <label for="uncheck">
+            <input type="button" id="uncheck" value ="Uncheck all" onclick="Uncheckall()">
+        </label>
+        <label for="check">
+            <input type="button" id="check" value="Check All" onclick="Checkall()">
+        </label>
+        <label for="invert">
+            <input type="button" id="invert" value="Invert" onclick="Invert()">
+        </label>
+        <label for="selected">
+            <input type="text" id="selected" style="width: auto;">
+        </label>
+    </div>
+    <script src="checkbox.js"></script>
+</body>
+</html>
