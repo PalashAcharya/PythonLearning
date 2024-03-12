@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+<body>
+    <form>
+        <label for="os">
+            <select id="os" name="os">
+                <option value="1">Windows</option>
+                <option value="2" >Mac</option>
+                <option value="3">Linux</option>
+            </select>
+        </label>
+        <label for="choice">
+            <input type="text" id="choice" placeholder="Enter Other os to the options">
+        </label>
+        <label for="add">
+            <input type="button" id="add" value="Add option" onclick="Add_option_dom()">
+        </label>
+        <br>
+        <label for="sub">
+            <input type="button" id="sub" value="Submit" onclick="Select()">
+        </label>
+        <p id="1para"></p>
+    </form>
+    <script src="select.js"></script>
+</body>
+</html>
