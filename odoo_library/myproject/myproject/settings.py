@@ -9,13 +9,15 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+from dotenv import load_dotenv
+import os
 from pathlib import Path
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -77,12 +79,12 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django_pyodbc_sql_server',
-        'NAME': config('DATABASE_NAME'),        
-        'USER': config('DATABASE_USER'),              
-        'PASSWORD': config('DATABASE_PASSWORD'),          
-        'HOST': config('DATABASE_HOST'),            
-        'PORT': config('DATABASE_PORT'),                            
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': os.getenv('DATABASE_NAME'),        
+        'USER': os.getenv('DATABASE_USER'),              
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),          
+        'HOST': os.getenv('DATABASE_HOST'),            
+        'PORT': os.getenv('DATABASE_PORT'),                            
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
             'extra_params': 'TrustServerCertificate=yes;'
