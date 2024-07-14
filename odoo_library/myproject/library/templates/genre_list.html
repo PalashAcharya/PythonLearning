@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Genres</title>
+</head>
+<body>
+    <h1>Genre List</h1>
+    <ul>
+        {% for genre in genres %}
+            <li>{{ genre.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
